@@ -156,13 +156,13 @@
                         <version>1.9.22</version>
                     </dependency>
                 </dependencies>
-            </plugin>
-            <plugin>
+            </plugin>            <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.12.0</version>
                 <configuration>
                     <reportVersion>2.30.0</reportVersion>
+                    <outputDirectory>${project.build.directory}/site/allure-maven-plugin</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -171,6 +171,50 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Plugin untuk menyalin laporan Allure ke docs folder untuk GitHub Pages -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-allure-report-to-docs</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/docs</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/site/allure-maven-plugin</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Plugin untuk membuat file .nojekyll di docs folder untuk GitHub Pages -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>create-nojekyll-file</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <touch file="${project.basedir}/docs/.nojekyll" mkdirs="true"/>
+                            </target>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

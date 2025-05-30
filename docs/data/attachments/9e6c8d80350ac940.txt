@@ -1,0 +1,14 @@
+Test Data:
+Dashboard Title: Zaidan Educare
+Status: PASSED
+Dashboard Element: Dasbor
+Bendahara Navbar Displayed: true
+Test Name: Check login is successful with valid credentials as role "bendahara"
+URL: http://ptbsp.ddns.net:6882
+Username: bendahara
+Dashboard URL: http://ptbsp.ddns.net:6882/
+Test Completed: 2025-05-31_00-41-12
+Page Title: Zaidan Educare
+Test Started: 2025-05-31 00:40:58
+Browser: Microsoft Edge
+Password: ********
