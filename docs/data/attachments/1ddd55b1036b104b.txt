@@ -1,0 +1,11 @@
+Test Data:
+Status: PASSED
+Error Message Displayed: true
+Username: indra
+Test Name: Check login is un-successful with invalid credentials. Its is username not registered
+Test Completed: 2025-05-31_00-36-31
+Page Title: Zaidan Educare
+Test Started: 2025-05-31 00:36:21
+URL: http://ptbsp.ddns.net:6882
+Browser: Microsoft Edge
+Password: ********

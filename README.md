@@ -158,6 +158,44 @@ Laporan interaktif dan detail yang menampilkan:
 - **Screenshot**: tangkapan layar yang diambil otomatis selama eksekusi
 - **Informasi lingkungan**: browser, OS, dan informasi lainnya
 
+## Men-Deploy Laporan Allure ke GitHub Pages
+
+Anda dapat membagikan laporan Allure melalui GitHub Pages agar dapat diakses secara online. Berikut adalah langkah-langkahnya:
+
+### 1. Persiapan Laporan untuk GitHub Pages
+1. Jalankan test dan hasilkan laporan Allure:
+   ```powershell
+   mvn clean test allure:report
+   ```
+
+2. Gunakan script yang disediakan untuk menyiapkan laporan untuk GitHub Pages:
+   ```powershell
+   .\prepare-allure-for-github-pages.ps1
+   ```
+   Script ini akan menyalin laporan ke dalam direktori `docs/` dan membuat file `.nojekyll`.
+
+### 2. Men-Deploy ke GitHub
+1. Commit dan push perubahan ke repositori GitHub Anda:
+   ```powershell
+   git add docs/ .nojekyll
+   git commit -m "Add Allure report for GitHub Pages"
+   git push origin main
+   ```
+
+2. Buka repositori GitHub Anda di browser.
+3. Pergi ke **Settings** > **Pages**.
+4. Di bagian **Source**, pilih **Deploy from a branch**.
+5. Pilih branch **main** dan direktori **/docs** kemudian klik **Save**.
+6. Tunggu beberapa menit hingga GitHub Pages di-deploy.
+
+### 3. Akses Laporan Online
+Setelah deployment selesai, laporan Allure akan tersedia di URL:
+```
+https://[username].github.io/[repository-name]/
+```
+
+Dengan cara ini, Anda dapat membagikan hasil pengujian secara online kepada tim atau stakeholder tanpa perlu menjalankan pengujian di mesin mereka.
+
 ### Tampilan Hasil Pengujian
 Laporan Allure menampilkan:
 

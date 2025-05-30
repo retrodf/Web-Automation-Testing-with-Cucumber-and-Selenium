@@ -1,0 +1,4 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"0","","0","Login Functionality","1","0","Check login is un-successful with invalid credentials. Its is username not registered","0"
+"0","","0","Login Functionality","1","0","Check login is successful with valid credentials as role ""bendahara""","0"
+"0","","0","Logout Functionality","1","0","Check login page after login using valid credentials as role ""administrator""","0"

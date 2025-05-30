@@ -1,0 +1,16 @@
+Test Data:
+Dashboard Title: Zaidan Educare
+Logo Displayed: true
+Status: PASSED
+Logo Type: Generic image
+Form Element Found: Username field by name
+Test Name: Check login page after login using valid credentials as role "administrator"
+Login Form Displayed: true
+Role: Administrator
+Login Page URL: http://ptbsp.ddns.net:6882/login
+Username: admin
+Dashboard URL: http://ptbsp.ddns.net:6882/
+Test Completed: 2025-05-31_00-36-59
+Test Started: 2025-05-31 00:36:35
+Browser: Microsoft Edge
+Button Text: Ya
