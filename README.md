@@ -1,7 +1,7 @@
 # Web Automation Testing dengan Cucumber dan Selenium
 
 ## Deskripsi Proyek
-Proyek ini merupakan implementasi web automation testing menggunakan Cucumber dan Selenium untuk menguji aplikasi "Education Fund Payment Management System for Zaidan Educare School". Proyek ini dibuat sebagai bagian dari mata kuliah Praktikum Pengujian Perangkat Lunak, Semester 6.
+Testing ini merupakan implementasi web automation testing menggunakan Cucumber dan Selenium untuk menguji web "Zaidan Educare". Testing ini dibuat sebagai bagian dari mata kuliah Praktikum Pengujian Perangkat Lunak, Semester 6.
 
 ## Spesifikasi Teknis
 
@@ -17,7 +17,7 @@ Proyek ini merupakan implementasi web automation testing menggunakan Cucumber da
 - **Browser**: Microsoft Edge
 
 ### Struktur Proyek
-Proyek ini mengikuti struktur standar Maven dengan penambahan direktori khusus untuk keperluan testing:
+Proyek ini mengikuti struktur standar Maven dan base project dari cucumber dengan penambahan direktori khusus untuk keperluan testing:
 
 ```
 WebAutomation/
@@ -52,7 +52,7 @@ WebAutomation/
 ```
 
 ## Fitur yang Diuji
-Proyek ini menguji dua fitur utama aplikasi Education Fund Payment Management System:
+Proyek ini menguji dua fitur utama web Zaidan Educare:
 
 ### 1. Login Functionality
 Pengujian ini mencakup dua skenario:
@@ -98,20 +98,20 @@ WebDriverManager digunakan untuk otomatisasi pengaturan dan manajemen WebDriver,
 
 ## Cara Menjalankan Pengujian
 
-### Prasyarat
-- Java Development Kit (JDK) 17 atau lebih tinggi
+### Requirement
+- Java Development Kit (JDK) 17 ++
 - Maven (opsional, karena sudah disediakan Maven Wrapper)
 - Internet untuk mengunduh dependensi Maven dan WebDriver
 
 ### Langkah Menjalankan Pengujian
 
-1. **Clone repositori** (jika menggunakan Git):
+1. **Clone repo** (jika menggunakan Git):
    ```powershell
    git clone [URL_REPOSITORY]
    cd WebAutomation
    ```
 
-2. **Jalankan pengujian** menggunakan Maven Wrapper:
+2. **Jalankan testing** menggunakan Maven Wrapper:
    ```powershell
    ./mvnw clean test
    ```
@@ -120,7 +120,7 @@ WebDriverManager digunakan untuk otomatisasi pengaturan dan manajemen WebDriver,
    mvn clean test
    ```
 
-3. **Menghasilkan laporan Allure**:
+3. **Create laporan Allure**:
    ```powershell
    ./mvnw allure:report
    ```
