@@ -1,4 +1,4 @@
-package io.cucumber.zaidan;
+package io.cucumber.zaidan.config;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
