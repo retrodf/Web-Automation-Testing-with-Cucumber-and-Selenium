@@ -25,7 +25,9 @@ public class DashboardPage extends BasePage {
     private WebElement dasborNavigation;
     
     @FindBy(xpath = "//*[contains(text(), 'Dashboard')]")
-    private WebElement dashboardEnglish;    @FindBy(xpath = "//button[contains(@class, 'bg-destructive')]")
+    private WebElement dashboardEnglish;
+    
+    @FindBy(xpath = "//button[contains(@class, 'bg-destructive')]")
     private WebElement logoutButtonByClass;
     
     @FindBy(xpath = "//a[contains(text(), 'Logout') or contains(text(), 'Log out') or contains(text(), 'Keluar')]")
