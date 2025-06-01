@@ -16,13 +16,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.ByteArrayInputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -30,7 +27,9 @@ import java.time.format.DateTimeFormatter;
  * Hooks for Cucumber test setup and teardown
  */
 public class Hooks {
-    private WebDriver driver;    @Before
+    private WebDriver driver;
+    
+    @Before
     public void setUp(Scenario scenario) {
         // Initialize test data storage
         AllureManager.initTestData();
@@ -82,13 +81,14 @@ public class Hooks {
                 // Write the properties file
                 try (OutputStream output = new FileOutputStream(envPropertiesPath.toFile())) {
                     envProperties.store(output, "Allure Environment Properties");
-                    System.out.println("Created Allure environment properties file");
-                }
+                    System.out.println("Created Allure environment properties file");                }
             }
         } catch (IOException e) {
             System.out.println("Error creating environment properties: " + e.getMessage());
         }
-    }    @After
+    }
+    
+    @After
     public void tearDown(Scenario scenario) {
         try {
             // Get current timestamp
@@ -142,10 +142,10 @@ public class Hooks {
             AllureManager.attachTestData();
             
             // Add a small delay before quitting to see the final state
-            Thread.sleep(1000);
-        } catch (Exception e) {
+            Thread.sleep(1000);        } catch (Exception e) {
             System.out.println("Error in tearDown: " + e.getMessage());
-            Allure.addAttachment("Error in tearDown", "text/plain", e.getMessage() + "\n" + e.getStackTrace().toString());        } finally {
+            Allure.addAttachment("Error in tearDown", "text/plain", e.getMessage() + "\n" + e.getStackTrace().toString());
+        } finally {
             // Always quit the driver
             WebDriverManager.quitDriver();
         }

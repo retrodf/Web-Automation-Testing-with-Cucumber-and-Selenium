@@ -1,6 +1,10 @@
 Feature: Logout Functionality
+  As an administrator of the Education Fund Payment Management System
+  I want to be able to logout from the system
+  So that I can securely end my session
 
-  Scenario: Check login page after login using valid credentials as role "administrator"
+  @logout @TC3
+  Scenario: Successful logout from administrator dashboard
     Given User has opened the browser
     And User has been logged in as an Administrator
     And User has opened administrator dashboard page
