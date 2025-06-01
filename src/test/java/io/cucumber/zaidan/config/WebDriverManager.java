@@ -14,20 +14,23 @@ public class WebDriverManager {
     /**
      * Creates and returns an Edge WebDriver instance
      * @return Edge WebDriver instance
-     */    public static WebDriver getDriver() {
+     */   
+        
+    public static WebDriver getDriver() {
         if (driver == null) {
-            // Let WebDriverManager handle the driver setup automatically
-            io.github.bonigarcia.wdm.WebDriverManager.edgedriver().setup();
             EdgeOptions options = new EdgeOptions();
-            // Add additional options for stability
-            options.addArguments("--start-maximized");
-            options.addArguments("--disable-extensions");
-            options.addArguments("--disable-popup-blocking");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--remote-allow-origins=*");
             
             driver = new EdgeDriver(options);
+            
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));  
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));   
+            driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(45));
+            
             driver.manage().window().maximize();
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
         return driver;
     }

@@ -34,7 +34,9 @@ public class LoginPage extends BasePage {
     private WebElement loginButtonAlternative;
     
     @FindBy(xpath = "//h1[contains(text(), 'Pengelolaan Dana Pendidikan Sekolah Zaidan Educare')]")
-    private WebElement pageTitle;    @FindBy(xpath = "//div[contains(@class, 'bg-[#ffecec]')]")
+    private WebElement pageTitle;    
+    
+    @FindBy(xpath = "//div[contains(@class, 'bg-[#ffecec]')]")
     private WebElement errorMessageBg;
     
     @FindBy(xpath = "//div[contains(@class, 'text-card-foreground shadow rounded-lg border')]")
